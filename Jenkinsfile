@@ -5,7 +5,6 @@ pipeline {
   stages {
 
     stage('Test') {
-      // agent { label 'nodejs-agent'}
       steps {
         sh 'node --version'
       }
