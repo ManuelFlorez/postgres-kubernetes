@@ -11,16 +11,19 @@ pipeline {
         echo 'Hello World'
       }
     }
+    
+  }
 
-    agent {
-      label 'docker-agent'
-    }
+  agent {
+    label 'docker-agent'
+  }
 
-    stage('Show') {
+  stages {
+    stage('Docker') {
       steps {
         sh 'docker --version'
       }
     }
-    
   }
+
 }
