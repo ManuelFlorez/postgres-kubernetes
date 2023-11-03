@@ -1,5 +1,7 @@
 pipeline {
   
+  agent { label 'nodejs-agent'}
+  
   stages {
 
     stage('Test') {
