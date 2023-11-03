@@ -12,9 +12,13 @@ pipeline {
       }
     }
 
+    agent {
+      label 'docker-agent'
+    }
+
     stage('Show') {
       steps {
-        kubectl cluster-info
+        docker --version
       }
     }
     
