@@ -1,29 +1,21 @@
 pipeline {
   
-  agent {
-    label 'nodejs-agent'
-  }
-  
   stages {
 
     stage('Test') {
+      agent { label 'nodejs-agent'}
       steps {
-        echo 'Hello World'
+        sh 'node --version'
       }
     }
-    
-  }
 
-  agent {
-    label 'docker-agent'
-  }
-
-  stages {
     stage('Docker') {
+      agent { label 'docker-agent' }
       steps {
         sh 'docker --version'
       }
     }
+    
   }
 
 }
