@@ -11,6 +11,12 @@ pipeline {
         echo 'Hello World'
       }
     }
+
+    stage('Show') {
+      steps {
+        kubectl cluster-info
+      }
+    }
     
   }
 }
